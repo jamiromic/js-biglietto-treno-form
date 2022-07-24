@@ -1,24 +1,16 @@
-/*Regole di Reset*/
+/* Variabili */
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+:root {
+    --bg-main : #B91450;
+    --bg-bottons : #CCCCCC;
+    --bg-name: #808080;
 }
 
-
-img {
-    max-width: 100%;
-
+body {
+    background-color: var(--bg-main) !important; 
 }
 
-ul,
-ol,
-menu {
-
-    list-style: none;
-
+.name_output {
+    background-color: var(--bg-name);
 }
 
