@@ -6,21 +6,26 @@ const discountMin = 0.20;
 // Inizializziamo Variabile Sconto al 40%
 const discountMax = 0.40;
 
-let offerRegular = 'Biglietto Standard'
+let typeOfDiscount = ''
 
-let offerDiscount = 'Biglietto Ridotto'
-
-// Dichiaro Variabile Tipo Offerta
-let Typediscount = document.getElementById('offer').innerHTML = offerRegular;
+let numberCP = Math.random()
 
 
+// Prendo il campo Carrozza dal DOM
+let numberCarrozza = document.getElementById('carrozza')
+
+// Calcolo il numero random
+numberCarrozza = Math.floor(Math.random()*10)
+
+// Prendo il campo CP dal DOM
+let codePostal = document.getElementById('cod_cp')
+
+// Calcolo il numero random
+codePostal = Math.floor(Math.random()*100000)
 
 
 
-
-
-
-// Prendo dal DOM l'elemento Button
+// Prendo dal DOM l'elemento Button Genera
 const buttonElement = document.querySelector('button[type="submit"]');
 
 // Inserisco l'evento Click sul Bottone
@@ -44,25 +49,67 @@ let clientAge = document.querySelector('select[name="age_choice"]');
 
 if (clientAge.value === 'min') {
   priceTotal = (priceTotal - discountMin);
-  Typediscount = offerDiscount;
+  typeOfDiscount = 'Biglietto Tariffa Ridotta';
 
-
-
-}
-
-if (clientAge.value === 'over') {
+} else if (clientAge.value === 'over') {
   priceTotal = (priceTotal - discountMax);
-  Typediscount = offerDiscount;
+  typeOfDiscount = 'Biglietto Tariffa Ridotta';
 
-
+} else {
+  typeOfDiscount = 'Biglietto Tariffa Standard'
 }
-
 
 // Inserisco il dato Output Prezzo sul DOM
-priceTotal = document.getElementById('price_ticket').innerHTML = (priceTotal);
+priceTotal = document.getElementById('price_ticket').innerHTML = (priceTotal)+' €';
+
+// Inserisco il dato Numero Carrozza nel DOM
+numberCarrozza = document.getElementById('carrozza').innerHTML = numberCarrozza
+
+// Inserisco il dato Codice Postale nel DOM
+codePostal = document.getElementById('cod_cp').innerHTML = codePostal
+
+// Inserisco il tipo di Biglietto
+let Typediscount = document.getElementById('offer').innerHTML = typeOfDiscount;
   
 
 })
+
+// Prendo dal DOM l'elemento Button Annulla
+const buttonElementErase = document.querySelector('button[type="erase"]');
+
+// Inserisco l'evento Click sul Bottone
+buttonElementErase.addEventListener('click', function () {
+
+  // Resetto il dato Output Nome/Cognome sul DOM
+  clientNameSurname = document.getElementById('name_surname').innerHTML = '';
+
+  // Resetto il tipo di Biglietto
+  let Typediscount = document.getElementById('offer').innerHTML = '';
+
+  // Resetto il dato Numero Carrozza nel DOM
+  numberCarrozza = document.getElementById('carrozza').innerHTML = '';
+
+  // Resetto il dato Codice Postale nel DOM
+  codePostal = document.getElementById('cod_cp').innerHTML = '';
+
+  // Resetto il dato Output Prezzo sul DOM
+  priceTotal = document.getElementById('price_ticket').innerHTML = '';
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+})
+
+
 
 
 
