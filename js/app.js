@@ -40,7 +40,7 @@ buttonElement.addEventListener('click', function () {
   // Prendo il dato Km Input dal DOM
   const clientKm = document.querySelector('input[name="km"]');
 
-  // Converto formato stringa in numero e calcolo i Km Totali
+  // Converto formato km da stringa a numero e calcolo il costo totale
   let priceTotal = parseFloat(clientKm.value) * 0.21
 
   // Prendo il dato input Età
@@ -60,7 +60,7 @@ if (clientAge.value === 'min') {
 }
 
 // Inserisco il dato Output Prezzo sul DOM
-priceTotal = document.getElementById('price_ticket').innerHTML = (priceTotal)+' €';
+priceTotal = document.getElementById('price_ticket').innerHTML = priceTotal.toFixed(2)+' €';
 
 // Inserisco il dato Numero Carrozza nel DOM
 numberCarrozza = document.getElementById('carrozza').innerHTML = numberCarrozza
@@ -94,18 +94,6 @@ buttonElementErase.addEventListener('click', function () {
 
   // Resetto il dato Output Prezzo sul DOM
   priceTotal = document.getElementById('price_ticket').innerHTML = '';
-
-
-  
-
-  
-
-
-
-
-
-
-
 
 })
 
