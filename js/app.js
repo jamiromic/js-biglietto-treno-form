@@ -49,14 +49,14 @@ let clientAge = document.querySelector('select[name="age_choice"]');
 
 if (clientAge.value === 'min') {
   priceTotal = (priceTotal - discountMin);
-  typeOfDiscount = 'Biglietto Tariffa Ridotta';
+  typeOfDiscount = 'Ridotta';
 
 } else if (clientAge.value === 'over') {
   priceTotal = (priceTotal - discountMax);
-  typeOfDiscount = 'Biglietto Tariffa Ridotta';
+  typeOfDiscount = 'Ridotta';
 
 } else {
-  typeOfDiscount = 'Biglietto Tariffa Standard'
+  typeOfDiscount = 'Standard'
 }
 
 // Inserisco il dato Output Prezzo sul DOM
